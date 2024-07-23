@@ -13,8 +13,12 @@
 	let showModal = false;
 	let selectedImageUrl = '';
 
-	const imageDir = import.meta.glob('../../contents/images/*.jpg', { eager: true, query: '?url', import: 'default' });
-	const images = Object.values(imageDir).map(module => module);
+	const images = Object.values(import.meta.glob('../../contents/images/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}', {
+		eager: true,
+		query: '?url',
+		import: 'default'
+	})).sort((a, b) => a.localeCompare(b));
+
 	const videos = [
 		{
 			id: 1,

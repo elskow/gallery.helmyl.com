@@ -13,7 +13,7 @@
 </script>
 
 <div class="flex flex-warp">
-	<div class="lg:w-4/12 w-3/12 md:py-10 ml-3 md:ml-0 lg:px-20 md:px-10">
+	<div class="lg:w-5/12 w-3/12 md:py-10 ml-3 md:ml-0 lg:px-20 md:px-10">
 		<img
 			alt="elskow"
 			class="w-full rounded-full mx-auto border bg-neutral-100 border-gray-200 p-1 dark:border-neutral-800 dark:bg-black"

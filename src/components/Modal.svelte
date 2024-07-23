@@ -40,11 +40,12 @@
 
 {#if showModal}
 	<div class="bg-neutral-800/95 fixed w-full h-full left-0 top-0 z-30 modal-backdrop"
-			 transition:fade={{ duration: 300 }} role="dialog" aria-modal="true">
-		<div class="flex justify-center items-center h-full w-full" on:click={closeModal}>
+			 transition:fade={{ duration: 300 }} role="dialog" aria-modal="true" on:click={closeModal} tabindex="0"
+			 aria-label="Close modal" aria-roledescription="modal">
+		<div class="flex justify-center items-center h-full w-full">
 			<div tabindex="-1" bind:this={modalContent} class="modal-content" aria-labelledby="modalTitle"
-					 on:click={stopPropagation} transition:fade={{ duration: 300 }}>
-				<button class="close-button" on:click={closeModal} aria-label="Close">&#10005;</button>
+					 on:click={stopPropagation} transition:fade={{ duration: 300 }} role="dialog" aria-modal="true">
+				<button class="close-button" on:click={closeModal} aria-label="Close" tabindex="0">&#10005;</button>
 				<slot />
 			</div>
 		</div>
@@ -67,6 +68,7 @@
         font-size: 24px;
         cursor: pointer;
         transition: color 0.3s ease;
+        text-shadow: 0 0 1px black;
     }
 
     .close-button:hover {

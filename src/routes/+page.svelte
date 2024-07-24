@@ -1,10 +1,10 @@
 <script>
-	import Topbar from '$components/Topbar.svelte';
-	import ProfileHeader from '$components/ProfileHeader.svelte';
-	import Footer from '$components/Footer.svelte';
-	import PhotoGallery from '$components/PhotoGallery.svelte';
-	import VideoGallery from '$components/VideoGallery.svelte';
-	import Modal from '$components/Modal.svelte';
+	import Topbar from '$lib/components/Topbar.svelte';
+	import ProfileHeader from '$lib/components/ProfileHeader.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	import PhotoGallery from '$lib/components/PhotoGallery.svelte';
+	import VideoGallery from '$lib/components/VideoGallery.svelte';
+	import Modal from '$lib/components/Modal.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { writable } from 'svelte/store';
@@ -75,14 +75,14 @@
 			<ProfileHeader numberPosts={numberPosts} />
 			<div class="flex items-center justify-center text-center gap-5 border-t mb-4 dark:border-neutral-800">
 				<button
-					class="uppercase tracking-tight font-semibold text-sm pt-3 px-3 border-black {$contentTypeStore === 'photo' ? 'border-t dark:border-neutral-400' : ''}"
+					class="uppercase tracking-tight font-semibold text-sm pt-3 px-3 border-black {$contentTypeStore === 'photo' ? 'border-t dark:border-neutral-400' : ''} md:text-base md:px-4"
 					on:click={() => updateContentType('photo')}
 				>
 					Photos
 				</button>
 
 				<button
-					class="uppercase tracking-tight font-semibold text-sm pt-3 px-3 border-black {$contentTypeStore === 'video' ? 'border-t dark:border-neutral-400' : ''}"
+					class="uppercase tracking-tight font-semibold text-sm pt-3 px-3 border-black {$contentTypeStore === 'video' ? 'border-t dark:border-neutral-400' : ''} md:text-base md:px-4"
 					on:click={() => updateContentType('video')}
 				>
 					Videos
